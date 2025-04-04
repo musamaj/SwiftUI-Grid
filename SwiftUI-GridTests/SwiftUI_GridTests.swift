@@ -6,11 +6,31 @@
 //
 
 import Testing
+import SwiftUI
+import SwiftData
+@testable import SwiftUI_Grid
 
 struct SwiftUI_GridTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    
+    @State var modelContext: ModelContext!
+    @State var viewModel: GridViewModel!
+    @State var view: GridView!
+    
+    @MainActor func setUp() {
+        let schema = Schema([GridItemModel.self])
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(for: schema, configurations: [config])
+        
+        modelContext = container.mainContext
+        viewModel = GridViewModel(modelContext: modelContext)
+        view = GridView(modelContext: modelContext)
     }
-
+    
+    func testAddingItemFromView() {
+        #expect(viewModel.items.count == 0)
+        
+        viewModel.addItem()
+        
+        #expect(viewModel.items.count == 1)
+    }
 }

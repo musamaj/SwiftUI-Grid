@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4BC98D032D9F939100DC0CDD /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC98D022D9F939100DC0CDD /* ViewInspector */; };
+		4BC98D062D9F942E00DC0CDD /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC98D052D9F942E00DC0CDD /* InlineSnapshotTesting */; };
+		4BC98D082D9F942E00DC0CDD /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC98D072D9F942E00DC0CDD /* SnapshotTesting */; };
+		4BC98D0A2D9F942E00DC0CDD /* SnapshotTestingCustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = 4BC98D092D9F942E00DC0CDD /* SnapshotTestingCustomDump */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4BC98CA42D9F28E000DC0CDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -66,6 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC98D0A2D9F942E00DC0CDD /* SnapshotTestingCustomDump in Frameworks */,
+				4BC98D082D9F942E00DC0CDD /* SnapshotTesting in Frameworks */,
+				4BC98D062D9F942E00DC0CDD /* InlineSnapshotTesting in Frameworks */,
+				4BC98D032D9F939100DC0CDD /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +169,10 @@
 			);
 			name = "SwiftUI-GridUITests";
 			packageProductDependencies = (
+				4BC98D022D9F939100DC0CDD /* ViewInspector */,
+				4BC98D052D9F942E00DC0CDD /* InlineSnapshotTesting */,
+				4BC98D072D9F942E00DC0CDD /* SnapshotTesting */,
+				4BC98D092D9F942E00DC0CDD /* SnapshotTestingCustomDump */,
 			);
 			productName = "SwiftUI-GridUITests";
 			productReference = 4BC98CAD2D9F28E000DC0CDD /* SwiftUI-GridUITests.xctest */;
@@ -195,6 +210,10 @@
 			);
 			mainGroup = 4BC98C872D9F28DF00DC0CDD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4BC98D012D9F939100DC0CDD /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				4BC98D042D9F942E00DC0CDD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4BC98C912D9F28DF00DC0CDD /* Products */;
 			projectDirPath = "";
@@ -583,6 +602,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4BC98D012D9F939100DC0CDD /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
+		4BC98D042D9F942E00DC0CDD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BC98D022D9F939100DC0CDD /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BC98D012D9F939100DC0CDD /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+		4BC98D052D9F942E00DC0CDD /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BC98D042D9F942E00DC0CDD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		4BC98D072D9F942E00DC0CDD /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BC98D042D9F942E00DC0CDD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		4BC98D092D9F942E00DC0CDD /* SnapshotTestingCustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BC98D042D9F942E00DC0CDD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTestingCustomDump;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4BC98C882D9F28DF00DC0CDD /* Project object */;
 }
