@@ -29,11 +29,21 @@ class GridViewModel: ObservableObject {
     func addItem() {
         let newItem = GridItemModel(title: "Item \(items.count+1)", color: "#FF5733")
         modelContext.insert(newItem)
+        saveContext()
         fetchItems() // Refresh UI
     }
     
     func deleteItem(_ item: GridItemModel) {
         modelContext.delete(item)
+        saveContext()
         fetchItems() // Refresh UI
+    }
+    
+    func saveContext() {
+        do {
+            try modelContext.save()
+        } catch {
+            print("Failed to save: \(error)")
+        }
     }
 }
